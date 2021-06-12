@@ -9,4 +9,5 @@
 ## Class
 
 * [Shape Calculator](class/shape-calculator.md)
+* [Object as Data Types](class/object-as-data-types.md)
 
