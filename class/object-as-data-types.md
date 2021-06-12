@@ -47,9 +47,9 @@ int main() {
 }
 ```
 
+
+
 Structre using classes + Default construcotor
-
-
 
 ```cpp
 #include <iostream>
