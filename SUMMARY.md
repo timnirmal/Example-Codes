@@ -6,3 +6,7 @@
 
 * [Measure Difference of Distance and display it in feet and inches format](structures/measure-difference-of-distance-and-display-it-in-feet-and-inches-format.md)
 
+## Class
+
+* [Shape Calculator](class/shape-calculator.md)
+
