@@ -13,3 +13,8 @@
 * [Counter](class/counter.md)
 * [ID Generator](class/id-generator.md)
 
+## Maze
+
+* [Untitled](maze/untitled.md)
+* [My Code](maze/my-code.md)
+
