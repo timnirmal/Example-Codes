@@ -9,4 +9,12 @@
 ## Class
 
 * [Shape Calculator](class/shape-calculator.md)
+* [Object as Data Types](class/object-as-data-types.md)
+* [Counter](class/counter.md)
+* [ID Generator](class/id-generator.md)
+
+## Maze
+
+* [Untitled](maze/untitled.md)
+* [My Code](maze/my-code.md)
 
