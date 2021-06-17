@@ -90,5 +90,16 @@ Dynamic Array
 
 Pair
 
+```cpp
+vector < pair<int, int> >  path;
 
+    path.push_back( make_pair(1,1) );
+    path.push_back( make_pair(2,2) );
+
+    cout << path[0].first << " "
+         << path[0].second << endl;
+    
+    cout<<endl<<path[1].first<<" "<<path[1].second;
+    cout<<endl<<path.back().first<<" "<<path.back().second;
+```
 
