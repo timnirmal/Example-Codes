@@ -1,6 +1,6 @@
 # Untitled
 
-{% embed url="https://www.programmersought.com/article/5951205870/" %}
+{% embed url="https://www.programmersought.com/article/5951205870/" caption="" %}
 
 ```text
 #include<iostream>

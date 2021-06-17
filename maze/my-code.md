@@ -103,7 +103,6 @@ int main(){
 
 
 }
-
 ```
 
 ## With 2 Colors
@@ -223,7 +222,6 @@ int main(){
 
     Print_Maze(0);
 }
-
 ```
 {% endtab %}
 
@@ -365,7 +363,6 @@ int main(){
 
     Print_Maze(0);
 }
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -479,11 +476,11 @@ void recursion(int r, int c) {
                     else{ 
                         maze[r][c - 2] = 0;
                     }
-                    
+
                     if (maze[r][c-1] == 0) {
                         maze[r][c - 1] = 4;
                     } else { maze[r][c - 1] = 0; }
-                    
+
                     recursion(r, c - 2);
                 }
                 break;
@@ -540,6 +537,5 @@ int main() {
         cout << endl;
     }
 }
-
 ```
 

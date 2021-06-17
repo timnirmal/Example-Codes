@@ -1,7 +1,5 @@
 # ID Generator
 
-## 
-
 ```cpp
 #include <iostream>
 
@@ -24,6 +22,5 @@ int main()
         cout << "The next ID is: " << IDGenerator::getNextID() << '\n';
     return 0;
 }
-
 ```
 
