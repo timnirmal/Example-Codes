@@ -71,3 +71,22 @@ int main(int argc, char const *argv[])
 
 ```
 
+Dynamic Array
+
+```cpp
+
+    int arr_size = sqrt(count);
+
+    int *maze = new int[arr_size];
+    count = 0;
+    
+    for(int i=0;i<arr_size;i++){
+        for(int j=0; j<arr_size; j++){
+            maze[i][j]=array[count];
+            count++;
+        }
+    }
+```
+
+
+
