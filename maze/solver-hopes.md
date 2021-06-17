@@ -103,3 +103,17 @@ vector < pair<int, int> >  path;
     cout<<endl<<path.back().first<<" "<<path.back().second;
 ```
 
+Loop
+
+```cpp
+int nLoopCount=6;
+
+    while (true)
+    {
+        if (nLoopCount == 0)
+            break;
+        nLoopCount = nLoopCount - 1;
+        cout << "Only " << nLoopCount << " loops to go" << endl;
+    }
+```
+
