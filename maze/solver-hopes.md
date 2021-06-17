@@ -105,6 +105,8 @@ vector < pair<int, int> >  path;
 
 Loop
 
+{% tabs %}
+{% tab title="C++" %}
 ```cpp
 int nLoopCount=6;
 
@@ -116,4 +118,22 @@ int nLoopCount=6;
         cout << "Only " << nLoopCount << " loops to go" << endl;
     }
 ```
+{% endtab %}
+
+{% tab title="" %}
+```cpp
+int nLoopCount=0;
+
+    while (true)
+    {
+        if (nLoopCount == 3)
+            break;
+        nLoopCount = nLoopCount + 1;
+        cout << "Only " << nLoopCount << " loops to go" << endl;
+    }
+```
+{% endtab %}
+{% endtabs %}
+
+
 
