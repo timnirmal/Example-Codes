@@ -365,6 +365,254 @@ int main(){
 }
 ```
 {% endtab %}
+
+{% tab title="Final" %}
+```cpp
+/*
+ 0 - Path
+ 1 - Wall
+ A - Starting Point
+ B - Finish Point
+
+ The generated puzzle must be saved to a text file
+
+ //For Solution
+ Path should replace with // and saved to another text file.
+*/
+#include<iostream>
+#include<stdlib.h>
+#include <algorithm>
+#include "windows.h"
+
+using namespace std;
+
+const int width = 21;
+const int height = 21;
+
+int random[4] = {1,2,3,4};
+int maze[width][height];
+
+void Print_Maze(int delay){
+    for(int i=0; i<width;i++){
+        for(int j =0; j<height;j++){
+            if(maze[i][j]==0){
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED);
+                cout<< maze[i][j]<<" ";
+            }
+            else{
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN);
+                cout<< maze[i][j]<<" ";
+            }
+        }
+        cout<<endl;
+    }
+    Sleep(delay);
+
+}
+
+void recursion(int x, int y){
+
+    // 4 random directions
+    random_shuffle(&random[0], &random[4]);
+    // Examine each direction
+    for (int i = 0; i < 4; i++) {
+
+        switch(random[i]){
+            case 1: // Up
+                //　Whether 2 cells up is out or not
+                if (x - 2 <= 0)
+                    continue;
+                if (maze[x - 2][y] != 0) {
+                    maze[x - 2][y] = 0;
+                    maze[x - 1][y] = 0;
+                    recursion(x - 2, y);
+                }
+                break;
+            case 2: // Right
+                // Whether 2 cells to the right is out or not
+                if (y + 2 >= width - 1)
+                    continue;
+                if (maze[x][y + 2] != 0) {
+                    maze[x][y + 2] = 0;
+                    maze[x][y + 1] = 0;
+                    recursion(x, y + 2);
+                }
+                break;
+            case 3: // Down
+                // Whether 2 cells down is out or not
+                if (x + 2 >= height - 1)
+                    continue;
+                if (maze[x + 2][y] != 0) {
+                    maze[x + 2][y] = 0;
+                    maze[x + 1][y] = 0;
+                    recursion(x + 2, y);
+                }
+                break;
+            case 4: // Left
+                // Whether 2 cells to the left is out or not
+                if (y - 2 <= 0)
+                    continue;
+                if (maze[x][y - 2] != 0) {
+                    maze[x][y - 2] = 0;
+                    maze[x][y - 1] = 0;
+                    recursion(x, y - 2);
+                }
+                break;
+        }
+
+        //Print_Maze(1000);
+        //system("cls");
+
+    }
+}
+
+int main(){
+
+    for(int i =0; i<width;i++){
+        for(int j =0; j<height;j++){
+            maze[i][j]=1;
+        }
+    }
+
+    maze[1][1]=0;
+
+    recursion(1,1);
+
+    Print_Maze(0);
+}
+
+```
+{% endtab %}
+
+{% tab title="Final 2" %}
+```cpp
+/*
+ 0 - Path
+ 1 - Wall
+ A - Starting Point
+ B - Finish Point
+
+ The generated puzzle must be saved to a text file
+
+ //For Solution
+ Path should replace with // and saved to another text file.
+*/
+#include<iostream>
+#include<stdlib.h>
+#include <algorithm>
+#include "windows.h"
+
+using namespace std;
+
+const int width = 21;
+const int height = 21;
+
+int random[4] = {1,2,3,4};
+int maze[width][height];
+
+int mark_x =0, mark_y=0;
+
+void Print_Maze(int delay){
+    for(int i=0; i<width;i++){
+        for(int j =0; j<height;j++){
+            if(maze[i][j]==0){
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED);
+                cout<< maze[i][j]<<" ";
+            }
+            else{
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN);
+                cout<< maze[i][j]<<" ";
+            }
+        }
+        cout<<endl;
+    }
+    Sleep(delay);
+
+}
+
+void recursion(int x, int y){
+
+    // 4 random directions
+    random_shuffle(&random[0], &random[4]);
+    // Examine each direction
+    for (int i = 0; i < 4; i++) {
+
+        switch(random[i]){
+            case 1: // Up
+                //　Whether 2 cells up is out or not
+                if (x - 2 <= 0)
+                    continue;
+                if (maze[x - 2][y] != 0) {
+                    maze[x - 2][y] = 0;
+                    maze[x - 1][y] = 0;
+                    mark_x = x - 2;
+                    mark_y = y;
+                    recursion(x - 2, y);
+                }
+                break;
+            case 2: // Right
+                // Whether 2 cells to the right is out or not
+                if (y + 2 >= width - 1)
+                    continue;
+                if (maze[x][y + 2] != 0) {
+                    maze[x][y + 2] = 0;
+                    maze[x][y + 1] = 0;
+                    mark_x = x;
+                    mark_y = y + 2;
+                    recursion(x, y + 2);
+                }
+                break;
+            case 3: // Down
+                // Whether 2 cells down is out or not
+                if (x + 2 >= height - 1)
+                    continue;
+                if (maze[x + 2][y] != 0) {
+                    maze[x + 2][y] = 0;
+                    maze[x + 1][y] = 0;
+                    mark_x = x + 2;
+                    mark_y = y;
+                    recursion(x + 2, y);
+                }
+                break;
+            case 4: // Left
+                // Whether 2 cells to the left is out or not
+                if (y - 2 <= 0)
+                    continue;
+                if (maze[x][y - 2] != 0) {
+                    maze[x][y - 2] = 0;
+                    maze[x][y - 1] = 0;
+                    mark_x = x;
+                    mark_y = y - 2;
+                    recursion(x, y - 2);
+                }
+                break;
+        }
+
+
+        //Print_Maze(1000);
+        //system("cls");
+
+    }
+}
+
+int main(){
+
+    for(int i =0; i<width;i++){
+        for(int j =0; j<height;j++){
+            maze[i][j]=1;
+        }
+    }
+
+    maze[1][5]=2;
+
+    recursion(1,5);
+    maze[1][5]=2;
+    maze[mark_x][mark_y] = 5;
+    Print_Maze(0);
+}
+
+```
+{% endtab %}
 {% endtabs %}
 
 ## With Colors \(Blue\)
