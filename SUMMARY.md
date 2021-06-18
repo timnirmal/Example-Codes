@@ -18,4 +18,5 @@
 * [Untitled](maze/untitled.md)
 * [My Code](maze/my-code.md)
 * [Solver Hopes](maze/solver-hopes.md)
+* [Finished](maze/finished.md)
 
