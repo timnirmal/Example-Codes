@@ -39,7 +39,7 @@ int main() {
 }
 ```
 
-Factorial Recursive
+### Factorial Recursive
 
 ```cpp
 #include <iostream>
@@ -61,5 +61,32 @@ int main() {
 }
 ```
 
+### Great Common Divisor \(GCD\)
 
+#### Euler's Algorithm
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int gcd(int x, int y){
+    cout<<"y = "<<y<<"\tx%y = "<<x%y<<endl;
+    if(x%y == 0)
+        return y;
+    else
+        return gcd(y, x%y);
+}
+
+int main() {
+    cout << gcd(160,10);
+    return 0;
+}
+
+//y = 160 x%y = 96
+//y = 96  x%y = 64
+//y = 64  x%y = 32
+//y = 32  x%y = 0
+//32
+```
 
