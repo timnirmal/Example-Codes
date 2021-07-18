@@ -1,14 +1,12 @@
 # Untitled
 
-
+### Count number of time a char present in string
 
 • Write a recursive function to count the number of times a character appears in a string • Parameters:
 
 * ch: character to be searched for and counted
 * inputStr: the string to be searched
 * pos: the starting position for the search
-
-
 
 ```cpp
 #include <iostream>
@@ -40,4 +38,28 @@ int main() {
     return 0;
 }
 ```
+
+Factorial Recursive
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+double factorial(double num) {
+    if (num==0) {
+        return 1;
+    } else {
+        return num * factorial(num-1);
+    }
+}
+
+int main() {
+    cout << factorial(10);
+    
+    return 0;
+}
+```
+
+
 
