@@ -23,5 +23,6 @@
 
 ## DSA
 
-* [Untitled](dsa/untitled.md)
+* [Recursive](dsa/untitled.md)
+* [Searching](dsa/searching.md)
 

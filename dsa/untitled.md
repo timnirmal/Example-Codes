@@ -1,4 +1,4 @@
-# Untitled
+# Recursive
 
 ### Count number of time a char present in string
 
@@ -88,5 +88,69 @@ int main() {
 //y = 64  x%y = 32
 //y = 32  x%y = 0
 //32
+```
+
+Fibonacci Series
+
+```cpp
+//Recursive
+int fib(int n){
+    if(n<=0)
+        return 0;
+    else if(n==1)
+        return 1;
+    else
+        return fib(n-1) + fib(n-2);
+}
+
+//Iterative method is faster
+int fib(int n){
+    if(n<=1)
+        return n;
+    else{
+        int n1=1, n2=0, fib;
+        for (int i = 2; i <= n; i++) {
+            fib = n2+n1;
+            n2 = n1;
+            n1 = fib;
+        }
+    return fib;
+    }
+}
+```
+
+Coin Change
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+//Coin array [1,2,5,10] , 8 , array size
+int change(int coins[], int amount, int hCoinIdx){
+    while (coins[hCoinIdx]>amount) {
+        hCoinIdx--;
+    }
+    if(amount==0||hCoinIdx==0){
+        return 1;
+    }
+    int numWays = 0;
+    int numCoins = 0;
+    while (numCoins <= amount/coins[hCoinIdx]) {
+        int amntRem = amount - numCoins*coins[hCoinIdx];
+        numWays = numWays + change(coins, amntRem, hCoinIdx-1);
+        numCoins++;
+    }
+    return numWays;
+}
+
+int main() {
+
+int coins[4]={1,2,5,10};
+
+    cout<<change(coins,18,4);
+
+    return 0;
+}
 ```
 
