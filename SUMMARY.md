@@ -21,3 +21,8 @@
 * [Finished](maze/finished.md)
 * [Untitled](maze/untitled-1.md)
 
+## DSA
+
+* [Recursive](dsa/untitled.md)
+* [Searching](dsa/searching.md)
+
